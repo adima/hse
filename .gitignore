@@ -90,3 +90,6 @@ ENV/
 
 # Hide solutions
 *_solution.ipynb
+
+# Large files
+module2_ML/data/aclImdb/
