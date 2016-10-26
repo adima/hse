@@ -60,6 +60,7 @@ instance/
 # Scrapy stuff:
 .scrapy
 
+
 # Sphinx documentation
 docs/_build/
 
@@ -77,6 +78,9 @@ celerybeat-schedule
 
 # dotenv
 .env
+
+# Jupyter 
+*.DS_Store
 
 # virtualenv
 venv/
