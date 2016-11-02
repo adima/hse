@@ -92,8 +92,11 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# Hide solutions
+# Hide solutions and inclass notes
 *_solution.ipynb
+*_inclass.ipynb
+*_inclass1.ipynb
+*_inclass2.ipynb
 
 # Large files
 module2_ML/data/aclImdb/
