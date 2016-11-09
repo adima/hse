@@ -103,3 +103,6 @@ module2_ML/data/aclImdb/
 
 # Private ML folder
 module2_ML/private_docs/
+
+# Submission files
+module2_ML/output
