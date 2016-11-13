@@ -106,3 +106,6 @@ module2_ML/private_docs/
 
 # Submission files
 module2_ML/output
+
+# Idea
+*.idea
