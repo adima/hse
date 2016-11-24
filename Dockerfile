@@ -9,7 +9,13 @@ USER root
 RUN pip install --upgrade pip
 
 # Vowpal Wabbit
-RUN apt-get install vowpal-wabbit
+RUN apt-get install git && \
+git clone https://github.com/JohnLangford/vowpal_wabbit.git && \
+cd vowpal_wabbit git && \
+./autogen.sh git && \
+./configure git && \
+make git && \
+sudo make install git
 
 # Install XGBoost
 RUN git clone --recursive https://github.com/dmlc/xgboost && \
