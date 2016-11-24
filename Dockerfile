@@ -8,27 +8,19 @@ USER root
 
 RUN pip install --upgrade pip
 
+RUN apt-get update && apt-get -y install vowpal-wabbit
 
 # Vowpal Wabbit
-RUN apt-get install git && \
-apt-get -y install build-essential && \
-apt-get -y install automake && \
-apt-get -y install autoconf && \
-apt-get -y install libxmu-dev && \
-apt-get -y install gcc && \
-apt-get -y install libpthread-stubs0-dev && \
-apt-get -y install libtool && \
-apt-get -y install libboost-program-options-dev && \
-apt-get -y install zlib1g-dev && \
-apt-get -y install libc6 && \
-apt-get -y install libgcc1 && \
-apt-get -y install libstdc++6 && \
-git clone https://github.com/JohnLangford/vowpal_wabbit.git && \
-cd vowpal_wabbit && \
-./autogen.sh && \
-./configure && \
-make && \
-make install
+#RUN add-apt-repository ppa:boost-latest/ppa && \
+#apt-get update
+#RUN apt-get -y install libboost-program-options-dev zlib1g-dev && \
+#apt-get -y install libboost-python-dev && \
+
+
+#git clone https://github.com/JohnLangford/vowpal_wabbit.git && \
+#cd vowpal_wabbit && \
+#make && \
+#make install
 
 # Install XGBoost
 RUN git clone --recursive https://github.com/dmlc/xgboost && \
