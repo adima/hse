@@ -35,4 +35,5 @@ RUN wget https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0rc
 # update main conda packages
 RUN conda update --quiet --yes numpy scipy pandas matplotlib seaborn scikit-learn
 
+# Switch back to jovyan to avoid accidental container runs as root
 USER $NB_USER
