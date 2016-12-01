@@ -98,11 +98,9 @@ ENV/
 *_inclass1.ipynb
 *_inclass2.ipynb
 
-# Large files
-module2_ML/data/aclImdb/
 
-# Private ML folder
-module2_ML/private_docs/
+# Private folders
+*/private/
 
 # Submission files
-module2_ML/output
+*/output
