@@ -22,11 +22,16 @@ RUN apt-get update && apt-get -y install vowpal-wabbit
 #make && \
 #make install
 
-# Install XGBoost
+# XGBoost
 RUN git clone --recursive https://github.com/dmlc/xgboost && \
     cd xgboost && \
     make -j4 && \
     cd python-package; python setup.py install && cd ../..
+
+# LightGBM – wouldn't install out of the box
+#RUN apt-get -y install cmake
+#RUN git clone --recursive https://github.com/Microsoft/LightGBM && cd LightGBM && \
+#mkdir build && cd build && cmake .. && make -j && cd ../..
 
 # TensorFlow 
 RUN wget https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0rc0-cp35-cp35m-linux_x86_64.whl && \
