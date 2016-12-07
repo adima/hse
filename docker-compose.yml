@@ -3,7 +3,7 @@ version: '2'
 services:
   jupyter:
     container_name: hse_big_ml
-    image: festline/hse_big_ml
+    image: chepiov/hse_big_ml
     working_dir: /notebooks
     ports:
       - "8888:8888"

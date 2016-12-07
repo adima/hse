@@ -2,11 +2,13 @@
 # Distributed under the terms of the Modified BSD License.
 FROM jupyter/scipy-notebook
 
-MAINTAINER Yury Kashnitsky
+MAINTAINER Yury Kashnitsky / Anvar Kiekbaev
 
 USER root
 
 RUN pip install --upgrade pip
+
+RUN conda update -y numpy scipy pandas matplotlib seaborn scikit-learn
 
 RUN apt-get update && apt-get -y install vowpal-wabbit
 
