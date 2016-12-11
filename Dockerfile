@@ -58,7 +58,7 @@ ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.3-src.zip
 ENV SPARK_OPTS --driver-java-options=-Xms1024M --driver-java-options=-Xmx4096M --driver-java-options=-Dlog4j.logLevel=info
 
 # update main conda packages
-#RUN conda update --quiet --yes numpy scipy pandas matplotlib seaborn scikit-learn
+RUN conda update --quiet --yes numpy scipy pandas matplotlib seaborn scikit-learn
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_USER
