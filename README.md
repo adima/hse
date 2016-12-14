@@ -79,7 +79,7 @@
 
 Инструкция:
 - скачать данный репозиторий
-- на Windows скорее всего придется [включить](http://www.sysprobs.com/disable-enable-virtualization-technology-bios) в BIOS виртуализацию, если раньше не использовали виртуальные машины и Docker
+- на Windows скорее всего придется [включить](http://www.sysprobs.com/disable-enable-virtualization-technology-bios) в BIOS виртуализацию, если раньше не использовали виртуальные машины или Docker
 - установить [Docker](https://docs.docker.com/engine/installation/)
 - установить [Docker Compose](https://docs.docker.com/compose/install/)
 - перейти в командной строке/терминале в скачанный каталог HSE_BigML_AddProfEduc
