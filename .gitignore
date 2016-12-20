@@ -108,4 +108,6 @@ ENV/
 # Idea
 *.idea
 
+# Large data
+module3_advanced_ML/data/samsung_activities/
 
