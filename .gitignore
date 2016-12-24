@@ -93,10 +93,10 @@ ENV/
 .ropeproject
 
 # Hide solutions and inclass notes
-#*_solution.ipynb
-#*_inclass.ipynb
-#*_inclass1.ipynb
-#*_inclass2.ipynb
+*_solution.ipynb
+*_inclass.ipynb
+*_inclass1.ipynb
+*_inclass2.ipynb
 
 
 # Private folders
