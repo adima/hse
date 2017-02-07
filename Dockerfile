@@ -10,18 +10,6 @@ RUN pip install --upgrade pip
 
 RUN apt-get update && apt-get -y install vowpal-wabbit
 
-# Vowpal Wabbit
-#RUN add-apt-repository ppa:boost-latest/ppa && \
-#apt-get update
-#RUN apt-get -y install libboost-program-options-dev zlib1g-dev && \
-#apt-get -y install libboost-python-dev && \
-
-
-#git clone https://github.com/JohnLangford/vowpal_wabbit.git && \
-#cd vowpal_wabbit && \
-#make && \
-#make install
-
 # XGBoost
 RUN git clone --recursive https://github.com/dmlc/xgboost && \
     cd xgboost && \
@@ -50,7 +38,7 @@ RUN cd /tmp && \
 
 RUN cd /usr/local && ln -s spark-${APACHE_SPARK_VERSION}-bin-hadoop2.7 spark
 
-# Spark and Mesos config
+# Spark config
 ENV SPARK_HOME /usr/local/spark
 ENV PYTHONPATH $SPARK_HOME/python:$SPARK_HOME/python/lib/py4j-0.10.3-src.zip
 ENV SPARK_OPTS --driver-java-options=-Xms1024M --driver-java-options=-Xmx4096M --driver-java-options=-Dlog4j.logLevel=info
