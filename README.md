@@ -83,14 +83,15 @@
 - установить [Docker](https://docs.docker.com/engine/installation/)
 - установить [Docker Compose](https://docs.docker.com/compose/install/)
 - перейти в командной строке/терминале в скачанный каталог HSE_BigML_AddProfEduc
-- убедиться, что порт 8888 не занят серверами Jupyter
 - выполнить docker-compose up. Это может занять продолжительное время
-- открыть localhost:8888
+- открыть localhost:7777 (в файле docker-compose.yml можно поменять порт 7777 на любой другой)
 
-Контейнеры Docker как правило занимают много места на диске.
+Контейнеры Docker, как правило, занимают много места на диске.
 - *docker ps* – посмотреть весь список контейнеров
 - *docker stop $(docker ps -a -q)* – остановить все контейнеры
 - *docker rm $(docker ps -a -q)* – удалить все контейнеры
+
+Доступная и понятная [документация](https://docs.docker.com/engine/getstarted/) Docker с примерами
 
 
 
