@@ -6,7 +6,7 @@ services:
     image: festline/hse_big_ml
     working_dir: /notebooks
     ports:
-      - "8888:8888"
+      - "7777:8888"
     volumes:
       - .:/notebooks
 
