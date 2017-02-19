@@ -8,7 +8,7 @@ USER root
 
 RUN pip install --upgrade pip
 
-RUN apt-get update && apt-get -y install vowpal-wabbit
+RUN apt-get update && apt-get -y install vowpal-wabbit && apt-get -y install cmake
 
 # XGBoost
 RUN git clone --recursive https://github.com/dmlc/xgboost && \
@@ -16,10 +16,10 @@ RUN git clone --recursive https://github.com/dmlc/xgboost && \
     make -j4 && \
     cd python-package; python setup.py install && cd ../..
 
-# LightGBM – wouldn't install out of the box
-#RUN apt-get -y install cmake
-#RUN git clone --recursive https://github.com/Microsoft/LightGBM && cd LightGBM && \
-#mkdir build && cd build && cmake .. && make -j && cd ../..
+# LightGBM
+RUN cd /usr/local/src && git clone --recursive --depth 1 https://github.com/Microsoft/LightGBM && \
+    cd LightGBM && mkdir build && cd build && cmake .. && make -j $(nproc) && \
+    cd /usr/local/src/LightGBM/python-package && python setup.py install 
 
 # TensorFlow 
 RUN wget https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0rc0-cp35-cp35m-linux_x86_64.whl && \
@@ -45,6 +45,9 @@ ENV SPARK_OPTS --driver-java-options=-Xms1024M --driver-java-options=-Xmx4096M -
 
 # update main conda packages
 RUN conda update --quiet --yes numpy scipy pandas matplotlib seaborn statsmodels scikit-learn
+
+# some other useful libs
+RUN pip install seaborn pydot
 
 # Switch back to jovyan to avoid accidental container runs as root
 USER $NB_USER
